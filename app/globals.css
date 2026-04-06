@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ivory: #f8f5ef;
+  --surface: #fffdfa;
+  --ink: #162134;
+  --muted: #526074;
+  --line: #dde3ed;
+  --navy: #0f2647;
+  --accent: #be954c;
+  --teal: #3f7488;
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --font-body: "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 88% 1%, rgba(63, 116, 136, 0.08), transparent 22%),
+    radial-gradient(circle at 8% 14%, rgba(190, 149, 76, 0.1), transparent 28%),
+    var(--ivory);
+  color: var(--ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(190, 149, 76, 0.26);
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .surface-card {
+    @apply rounded-xl2 border border-line bg-white/90 shadow-card backdrop-blur;
+  }
+
+  .section-space {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium text-muted;
+  }
+
+  .fancy-ring {
+    box-shadow:
+      0 0 0 1px rgba(190, 149, 76, 0.28),
+      0 0 0 5px rgba(190, 149, 76, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
